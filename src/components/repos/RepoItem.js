@@ -1,18 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const RepoItem = ({repo}) => {
   return (
     <div className="card">
       <h3>
-        <a href={repo.html_url}>{repo.name}</a>
+        <a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
       </h3>
+      {repo.stargazers_count > 0 && <h4 style={repoStatStyle}>Stars: {repo.stargazers_count}</h4>} 
+      {repo.watchers_count > 0 && <h4 style={repoStatStyle}>Watchers: {repo.watchers_count}</h4>}
+      {repo.forks_count > 0 && <h4 style={repoStatStyle}>Forks: {repo.forks_count}</h4>}
     </div>
   );
 }
 
 RepoItem.propTypes = {
   repo: PropTypes.object.isRequired,
+}
+
+const repoStatStyle = {
+  display: 'inline',
+  marginRight: '10px',
+  width: '200px'
 }
 
 export default RepoItem
