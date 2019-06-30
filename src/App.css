@@ -6,7 +6,8 @@
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --medium-color: #a0a0a0;
-  --primary-color: #4d58ff;
+  --primary-color: #2f3cec;
+  --primary-color-light: #959beb;
   --success-color: #28a745;
   --slow-transition: 1s;
   --medium-transition: 0.5s;
@@ -33,7 +34,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  color: #aaa;
 }
 
 ul {
@@ -47,7 +48,7 @@ img {
 /* Utilities */
 
 .container {
-  margin: auto;
+  margin: 10px auto;
   max-width: 1100px;
   min-height: 500px;
   overflow: hidden;
@@ -131,6 +132,7 @@ img {
 .card:hover {
   background-color: var(--light-color);
   transition: background-color var(--fast-transition);
+  box-shadow: var(--medium-color) 6px 6px 12px;
 }
 
 .card img {
@@ -141,7 +143,7 @@ img {
 .card-img-effect img {
   width: 60px;
   border-radius: 50%;
-  transition: width var(--fast-transition);
+  transition: border-radius var(--fast-transition);
 }
 
 .card-img-effect:hover img{
@@ -250,6 +252,7 @@ img {
 .btn {
   background: var(--light-color);
   border: none;
+  border-radius: 4px;
   color: #333;
   cursor: pointer;
   display: inline-block;
@@ -369,7 +372,7 @@ input {
 }
 
 input[type='text'], input[type='email'], input[type='password'], input[type='date'], select, textarea {
-  border: 1px solid #ccc;
+  border: 1px solid var(--medium-color);
   display: block;
   font-size: 1.2rem;
   padding: 0.4rem;
