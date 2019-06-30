@@ -11,6 +11,7 @@ import NotFound from './components/pages/NotFound';
 import Navbar from './components/layout/Navbar';
 import User from './components/users/User';
 import Alert from './components/layout/Alert';
+import Footer from './components/layout/Footer';
 
 //import State
 import GithubState from './context/github/GithubState';
@@ -35,6 +36,7 @@ const App = () => {
                 <Route component={NotFound} />
               </Switch>
             </div>
+            <Footer />
           </div>
         </Router>
       </AlertState>

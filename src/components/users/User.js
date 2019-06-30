@@ -9,13 +9,6 @@ const User = ({ match }) => {
   const githubContext = useContext(GithubContext);
 
   const { getUser, loading, user, repos, getUserRepos } = githubContext;
-
-  useEffect(() => {
-    getUser(match.params.login);
-    getUserRepos(match.params.login);
-    // eslint-disable-next-line
-  }, []);
-
   const {
     name,
     avatar_url,
@@ -31,6 +24,14 @@ const User = ({ match }) => {
     public_gists,
     hireable
   } = user;
+
+  useEffect(() => {
+    getUser(match.params.login);
+    getUserRepos(match.params.login);
+    // eslint-disable-next-line
+  }, []);
+
+
 
   if (loading) {
     return (
@@ -48,9 +49,9 @@ const User = ({ match }) => {
           :
           (<i className="fas fat-times-circle text-danger" />)
         }
-        <div className="card grid-2">
+        <div className="card card-img-effect grid-2">
           <div className="all-center">
-            <img src={avatar_url} className='round-img' alt="" style={{ width: '150px' }} />
+            <img src={avatar_url} className='round-img-effect' alt="" style={{ width: '150px' }} />
             <h1>{name}</h1>
             <h2>( {login} )</h2>
             {location && <p>Location: {location}</p>}
